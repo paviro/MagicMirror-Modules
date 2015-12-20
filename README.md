@@ -10,8 +10,8 @@ In this repository I will with time open source the [MagicMirror](https://github
 - Multiple calenders based on faceregognition
 
 ## Usage
-1. Copy the folder callmonitor from `www/js` into your webservers `js` folder.
-2. Copy the folder img from `www` into your webservers root folder.
+1. Copy the folder `callmonitor` from `www/js` into your webservers `js` folder.
+2. Copy the folder `img` from `www` into your webservers root folder.
 3. In your index.php add <br>`<script src="http://localhost:1234/socket.io/socket.io.js"></script>
 <script src="js/callmonitor/callmonitor.js" type="text/javascript"></script>`<br> before `</body>` and remove the existing refrence to socket.io.js
 4. Copy the folder SocketIOServer in `bin` into `/usr/local/bin` on your Pi or another mirror computer.
