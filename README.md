@@ -1,5 +1,5 @@
 # MagicMirror-Extensions
-In this repository I will with time open source the [MagicMirror](https://github.com/MichMich/MagicMirror) extensions I wrote for my mirror.
+In this repository I will with time open source the [MagicMirror](https://github.com/MichMich/MagicMirror) extensions I wrote for my mirror. You can find some more details on my [blog](http://metype.org/en/category/diy-projekte/spiegel/).
 
 ## Features
 - Callmonitor for FRITZ!Box users
