@@ -51,5 +51,4 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 The negative training data is from the ORL face database.  Please see the file
-training/negative/README for more information on this data.`
-=======
+tools/facetrainer/training_data/negative/README for more information on this data.`
