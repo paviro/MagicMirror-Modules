@@ -1,6 +1,7 @@
-"""Based on Raspberry Pi Face Recognition Treasure Box
+"""PaViRO MagicMirror-Extensions - Face recognition
 Positive Image Capture Script
-Copyright 2013 Tony DiCola 
+Copyright 2015 Paul-Vincent Roll
+Based on work by Tony DiCola (Copyright 2013)
 
 Run this script to capture positive images for training the face recognizer.
 """

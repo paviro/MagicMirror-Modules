@@ -1,14 +1,16 @@
 #!/usr/bin/python
 # coding: utf8
-"""Based on Raspberry Pi Face Recognition Treasure Box
+"""PaViRO MagicMirror-Extensions - Face recognition
 Face Recognition Training Script
-Copyright 2013 Tony DiCola
+Copyright 2015 Paul-Vincent Roll
+Based on work by Tony DiCola (Copyright 2013)
 
 Run this script to train the face recognition system with training images from multiple people.  
 The face recognition model is based on the eigen faces algorithm implemented in OpenCV.  
 You can find more details on the algorithm and face recognition here:
 http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html
 """
+
 import fnmatch
 import os
 

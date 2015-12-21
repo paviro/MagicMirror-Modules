@@ -12,8 +12,9 @@ The scripts in this directory are based on scripts from [pi-facerec-box](https:/
 ### Training model
 1. Make sure you have all dependencies (see bellow) installed.
 2. Make sure you have captured all your images.
-3. Enter the `tools/facetrainer` directory from a terminal and run `python train.py`.
+3. Enter the `tools/facetrainer` directory from a terminal and run `python train.py`. The script will automatically scan `tools/facetrainer/training_data` for your images.
 4. Wait. You will end up with a `training.xml` file in `tools/facetrainer`.
+5. Write down the `['ID-0', 'name', 'name2','name3']` part because you will later need it for setting up your mirror's face recognition.
 
 ## Dependencies
 - [OpenCV](http://opencv.org) (sudo apt-get install libopencv-dev python-opencv)
