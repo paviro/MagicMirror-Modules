@@ -20,6 +20,13 @@ import numpy as np
 import lib.config as config
 import lib.face as face
 
+print "Which algorithm do you want to use?"
+print "[1] LBPHF (recommended)"
+print "[2] Fisherfaces"
+print "[3] Eigenfaces"
+
+algorithm_choice = raw_input("--> ")
+
 def walk_files(directory, match='*'):
 	"""Generator function to iterate through all files in a directory recursively
 	which match the given filename match parameter.
@@ -78,15 +85,23 @@ if __name__ == '__main__':
 				neg_count += 1
 			else:
 				pos_count += 1
-			
+	#Print statistic on how many pictures per person we have collected		
 	print 'Read', pos_count, 'positive images and', neg_count, 'negative images.'
-	for j in range(1, max(labels) + 1):
-		print str(labels.count(j)) + " Bilder von " + config.IMAGE_DIRS[j][1]
-	#print np.asarray(labels)
+	for j in range(0, max(labels)):
+		print str(labels.count(j+1)) + " Bilder von " + IMAGE_DIRS[j]
+
 	# Train model
 	print '-' *20
 	print 'Training model...'
-	model = cv2.createEigenFaceRecognizer()
+	
+	#set the choosen algorithm
+	if algorithm_choice == "1":
+		model = cv2.createLBPHFaceRecognizer()
+	elif algorithm_choice == "2":
+		model = cv2.createFisherFaceRecognizer()
+	elif algorithm_choice == "3":
+		model = cv2.createEigenFaceRecognizer()
+		
 	model.train(np.asarray(faces), np.asarray(labels))
 
 	# Save model results
@@ -95,3 +110,4 @@ if __name__ == '__main__':
 	print
 	IMAGE_DIRS.insert(0, "ID-0")
 	print "Please add or update (if you added new people not just new images) " + str(IMAGE_DIRS) + " in your config file. You can change the names to whatever you want, just keep the same order and leave the ID-0 as it is and you'll be fine."
+	print "Please enter " + str(algorithm_choice) + " as your choosen algorithm inside config.py"
