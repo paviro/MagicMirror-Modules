@@ -1,4 +1,5 @@
 # Facerecognition Test Tool
+With this tool you can test if your facerecognition model is working.
 The facerecognition in this tool is based on code from [pi-facerec-box](https://github.com/tdicola/pi-facerec-box). The tool is only tested on a desktop computer, not on a Pi.
 
 ## Usage
@@ -32,6 +33,3 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-The negative training data is from the ORL face database.  Please see the file
-tools/facetrainer/training_data/negative/README for more information on this data.

@@ -34,3 +34,18 @@ monitor.on('disconnected', function (call) {
 });
 
 //End Callmonitor
+
+//Python Bridge - needed for faceregognition
+var server = net.createServer(function(python_bridge) {
+  python_bridge.on('data', function(data) {
+    if(data.toString().split(";")[0] == "Gesicht") {
+      console.log(data.toString().split(";")[1])
+      io.sockets.emit('Gesicht', data.toString().split(";")[1]);
+    }
+    if(data.toString() == "DONE") {
+      python_bridge.end();
+        }
+  });
+});
+server.listen("/tmp/python_node_bridge");
+//End Python Bridge

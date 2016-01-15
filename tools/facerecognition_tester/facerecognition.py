@@ -1,4 +1,11 @@
 # coding: utf8
+"""PaViRO MagicMirror-Extensions - Face recognition
+Face Recognition Testing Script
+Copyright 2015 Paul-Vincent Roll
+Based on work by Tony DiCola (Copyright 2013)
+
+Run this script to test your training data.
+"""
 import cv2  # OpenCV Library
 import lib.face as face
 import lib.config as config

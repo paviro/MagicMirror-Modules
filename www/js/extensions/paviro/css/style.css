@@ -28,3 +28,29 @@
 	padding-top: 20px;
 	-webkit-margin-before: 10px!important;
 }
+
+#anmeldung {
+	background-color: white;
+	color: black;
+	margin: 0 165px;	
+	font-size: 60px;
+	width: auto;
+	border-radius: 20px;
+	display: none;
+}
+
+#anmeldung h2{
+	font-size: 40px!important;
+	-webkit-margin-before: 10px!important;
+	-webkit-margin-after: -25px!important;
+	-webkit-margin-start: 0px!important;
+	-webkit-margin-end: 0px!important;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+#anmelde_name{
+	font-size: 90px;
+	padding-bottom: 20px;
+	letter-spacing: 2px;
+}

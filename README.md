@@ -10,10 +10,10 @@ In this repository I will with time open source the [MagicMirror](https://github
 - Multiple calenders based on faceregognition
 
 ## Usage
-1. Copy the folder `callmonitor` from `www/js` into your webservers `js` folder.
+1. Copy the folder `extensions` from `www/js` into your webservers `js` folder.
 2. Copy the folder `img` from `www` into your webservers root folder.
 3. In your index.php add <br>`<script src="http://localhost:1234/socket.io/socket.io.js"></script>
-<script src="js/callmonitor/callmonitor.js" type="text/javascript"></script>`<br> before `</body>` and remove the existing refrence to socket.io.js
+<script src="js/extensions/paviro/paviro.js" type="text/javascript"></script>`<br> before `</body>` and remove the existing refrence to socket.io.js
 4. Copy the folder SocketIOServer in `bin` into `/usr/local/bin` on your Pi or another mirror computer.
 5. Change the IP adress in `SocketIOServer/server.js` to the IP of your FRITZ!Box.
 6. Add your adressbook in `SocketIOServer/addressbook.js`.
@@ -26,6 +26,7 @@ In this repository I will with time open source the [MagicMirror](https://github
 ## Dependencies
 - [node-fritzbox-callmonitor](https://www.npmjs.com/package/node-fritzbox-callmonitor) (npm install node-fritzbox-callmonitor)
 - [socket.io](http://socket.io/) (npm install socket.io)
+- [OpenCV](http://opencv.org) (sudo apt-get install libopencv-dev python-opencv)
 
 ## Open Source Licenses
 ###[pi-facerec-box](https://github.com/tdicola/pi-facerec-box)
