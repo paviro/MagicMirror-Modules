@@ -8,7 +8,7 @@ Usage:
 from setuptools import setup
 
 APP = ['facerecognition.py']
-DATA_FILES = ["cascades", "training.xml"]
+DATA_FILES = ["lib", "training.xml"]
 OPTIONS = {'argv_emulation': True}
 
 setup(

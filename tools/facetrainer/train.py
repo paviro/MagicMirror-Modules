@@ -63,16 +63,13 @@ if __name__ == '__main__':
 	print '-' *20
 	faces = []
 	labels = []
-	IMAGE_DIRS_WITH_LABEL = [[0,"negative"]]
-	pos_count = 0
-	neg_count = 0
-	
+	IMAGE_DIRS_WITH_LABEL = []
 	IMAGE_DIRS = os.listdir(config.TRAINING_DIR)
-	IMAGE_DIRS = [x for x in IMAGE_DIRS if not x.startswith('.') and not x.startswith('negative')]
+	IMAGE_DIRS = [x for x in IMAGE_DIRS if not x.startswith('.')]
 	
 	for i in range(len(IMAGE_DIRS)):
-		print "Assign label " + str(i+1) + " to " + IMAGE_DIRS[i]
-		IMAGE_DIRS_WITH_LABEL.append([i+1,IMAGE_DIRS[i]])
+		print "Assign label " + str(i) + " to " + IMAGE_DIRS[i]
+		IMAGE_DIRS_WITH_LABEL.append([i,IMAGE_DIRS[i]])
 	print '-' *20
 	
 	#Für jedes Label/Namen Paar:
@@ -81,12 +78,8 @@ if __name__ == '__main__':
 		for filename in walk_files(config.TRAINING_DIR + str(IMAGE_DIRS_WITH_LABEL[j][1]), '*.pgm'):
 			faces.append(prepare_image(filename))
 			labels.append(IMAGE_DIRS_WITH_LABEL[j][0])
-			if IMAGE_DIRS_WITH_LABEL[j][0] == 0:
-				neg_count += 1
-			else:
-				pos_count += 1
-	#Print statistic on how many pictures per person we have collected		
-	print 'Read', pos_count, 'positive images and', neg_count, 'negative images.'
+			
+	#Print statistic on how many pictures per person we have collected
 	for j in range(0, max(labels)):
 		print str(labels.count(j+1)) + " Bilder von " + IMAGE_DIRS[j]
 
@@ -108,6 +101,5 @@ if __name__ == '__main__':
 	model.save(config.TRAINING_FILE)
 	print 'Training data saved to', config.TRAINING_FILE
 	print
-	IMAGE_DIRS.insert(0, "ID-0")
 	print "Please add or update (if you added new people not just new images) " + str(IMAGE_DIRS) + " in your config file. You can change the names to whatever you want, just keep the same order and leave the ID-0 as it is and you'll be fine."
 	print "Please enter " + str(algorithm_choice) + " as your choosen algorithm inside config.py"

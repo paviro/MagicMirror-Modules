@@ -47,6 +47,19 @@ HAAR_FACES         = path_to_file +'/cascades/haarcascade_frontalface.xml'
 HAAR_EYES         = path_to_file +'/cascades/haarcascade_eye.xml'
 HAAR_SCALE_FACTOR  = 1.3
 HAAR_MIN_NEIGHBORS_FACE = 3
-HAAR_MIN_NEIGHBORS_EYES = 20
+HAAR_MIN_NEIGHBORS_EYES = 2
 HAAR_MIN_SIZE_FACE      = (30, 30)
-HAAR_MIN_SIZE_EYES      = (2, 2)
+HAAR_MIN_SIZE_EYES      = (20, 20)
+
+def get_camera():
+	syslog.syslog("-" * 20)
+	syslog.syslog("Beutztes System: " + _platform)
+	if _platform == "darwin":
+		import webcam
+		syslog.syslog("Webcam ausgewählt...")
+	 	return webcam.OpenCVCapture(device_id=0)
+	elif _platform == "linux" or _platform == "linux2":
+		import picam
+		syslog.syslog("PiCam ausgewählt...")
+		return picam.OpenCVCapture()
+	syslog.syslog("-" * 20)

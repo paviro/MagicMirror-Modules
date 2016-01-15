@@ -1,20 +1,11 @@
-# Facetrainer Tool
-The scripts in this directory are based on scripts from [pi-facerec-box](https://github.com/tdicola/pi-facerec-box) and are usable on a Raspberry Pi (with a PiCam) or on a computer (with a webcam). Training the model of course is faster on a computer but you'll need OpenCV installed on it not only your Pi.
+# Facerecognition Test Tool
+The facerecognition in this tool is based on code from [pi-facerec-box](https://github.com/tdicola/pi-facerec-box). The tool is only tested on a desktop computer, not on a Pi.
 
 ## Usage
-### Capturing training images
 1. Make sure you have all dependencies (see bellow) installed.
-2. Enter the `tools/facetrainer` directory from a terminal and run `python capture.py`.
-3. Decide whether you want to capture images from your web/pi cam or convert existing `.jpg` images.
-4. Enter the name of the person you are about to capture. Images will be stored in a folder named after the captured person in `tools/facetrainer/training_data/`.
-5. Follow screen instructions.
-
-### Training model
-1. Make sure you have all dependencies (see bellow) installed.
-2. Make sure you have captured all your images.
-3. Enter the `tools/facetrainer` directory from a terminal and run `python train.py`. The script will automatically scan `tools/facetrainer/training_data` for your images.
-4. Wait. You will end up with a `training.xml` file in `tools/facetrainer`.
-5. Write down the `['ID-0', 'name', 'name2','name3']` part because you will later need it for setting up your mirror's face recognition.
+2. Copy your `training.xml` from `tools/facetrainer` into the root folder of this tool.
+3. In `tools/facerecognition_tester/lib/config.py` add add your training labels from `tools/facetrainer` under `personen = []` and specify the used algorithm.
+4. Enter the `tools/facerecognition_tester` directory from a terminal and run `python facerecognition.py`.
 
 ## Dependencies
 - [OpenCV](http://opencv.org) (sudo apt-get install libopencv-dev python-opencv)
