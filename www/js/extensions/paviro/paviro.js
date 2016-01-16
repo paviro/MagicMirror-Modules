@@ -21,7 +21,7 @@ $('body').append(`
 function switchview(person) {
     if (person !="Abgemeldet" && person !="Unbekannt"){
         //Set calender URL for logged in user currently only one URL is supported.
-        config.calendar.url = "https://p01-calendars.icloud.com/published/2/VKQg_p6ix87HS6MvIjlTei4qNezXSJqqDGc0WtYJYDZ9qY5hpNYfZyS_NrQ1M-JeXgrrce6DsYqGwIVmG6JstCoDgdHfgj5VhWrFatFQG_w"
+        config.calendar.url = "https://example.com/your-calendar-url"
         calendar.updateData()
     }
     if (person == "Abgemeldet"){
