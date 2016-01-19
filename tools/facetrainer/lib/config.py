@@ -27,9 +27,11 @@ HAAR_MIN_NEIGHBORS = 4
 HAAR_MIN_SIZE      = (30, 30)
 
 def get_camera():
-		if _platform == "darwin":
-			import webcam
-		 	return webcam.OpenCVCapture(device_id=0)
-		elif _platform == "linux" or _platform == "linux2":
-			import picam
-			return picam.OpenCVCapture()
+	import webcam
+	return webcam.OpenCVCapture(device_id=0)
+#		if _platform == "darwin":
+#			import webcam
+#		 	return webcam.OpenCVCapture(device_id=0)
+#		elif _platform == "linux" or _platform == "linux2":
+#			import picam
+#			return picam.OpenCVCapture()

@@ -110,7 +110,7 @@ while True:
 				crop = face.resize(face.crop(image, x, y, w, h))
 			# Test face against model.
 			label, confidence = model.predict(crop)
-			if (label !=-1):
+			if (label !=-1 and label!=0):
 				angemeldet = time.time()
 				#Routine, zum Zählen, wie oft der selbe Nutzer in Folge erkannt wurde.
 				if (config.personen[label] == last_match and gleicher_nutzer_in_folge < 2):

@@ -26,6 +26,7 @@ print "[2] Fisherfaces"
 print "[3] Eigenfaces"
 
 algorithm_choice = raw_input("--> ")
+print
 
 def walk_files(directory, match='*'):
 	"""Generator function to iterate through all files in a directory recursively
@@ -63,14 +64,16 @@ if __name__ == '__main__':
 	print '-' *20
 	faces = []
 	labels = []
-	IMAGE_DIRS_WITH_LABEL = []
+	IMAGE_DIRS_WITH_LABEL = [[0,"negative"]]
 	IMAGE_DIRS = os.listdir(config.TRAINING_DIR)
-	IMAGE_DIRS = [x for x in IMAGE_DIRS if not x.startswith('.')]
+	IMAGE_DIRS = [x for x in IMAGE_DIRS if not x.startswith('.') and not x.startswith('negative')]
+	pos_count = 0
 	
 	for i in range(len(IMAGE_DIRS)):
-		print "Assign label " + str(i) + " to " + IMAGE_DIRS[i]
-		IMAGE_DIRS_WITH_LABEL.append([i,IMAGE_DIRS[i]])
+		print "Assign label " + str(i+1) + " to " + IMAGE_DIRS[i]
+		IMAGE_DIRS_WITH_LABEL.append([i+1,IMAGE_DIRS[i]])
 	print '-' *20
+	print
 	
 	#Für jedes Label/Namen Paar:
 	for j in range(0,len(IMAGE_DIRS_WITH_LABEL)):
@@ -78,13 +81,18 @@ if __name__ == '__main__':
 		for filename in walk_files(config.TRAINING_DIR + str(IMAGE_DIRS_WITH_LABEL[j][1]), '*.pgm'):
 			faces.append(prepare_image(filename))
 			labels.append(IMAGE_DIRS_WITH_LABEL[j][0])
+			if IMAGE_DIRS_WITH_LABEL[j][0] != 0:
+				pos_count += 1
 			
 	#Print statistic on how many pictures per person we have collected
-	for j in range(0, max(labels)):
-		print str(labels.count(j+1)) + " Bilder von " + IMAGE_DIRS[j]
+	print 'Read', pos_count, 'positive images and', labels.count(0), 'negative images.'
+	print
+	for j in range(1, max(labels) + 1):
+		print str(labels.count(j)) + " Bilder von " + IMAGE_DIRS[j-1]
 
 	# Train model
 	print '-' *20
+	print
 	print 'Training model...'
 	
 	#set the choosen algorithm
@@ -99,6 +107,7 @@ if __name__ == '__main__':
 
 	# Save model results
 	model.save(config.TRAINING_FILE)
+	IMAGE_DIRS.insert(0, "ID-0")
 	print 'Training data saved to', config.TRAINING_FILE
 	print
 	print "Please add or update (if you added new people not just new images) " + str(IMAGE_DIRS) + " in your config file. You can change the names to whatever you want, just keep the same order and leave the ID-0 as it is and you'll be fine."
