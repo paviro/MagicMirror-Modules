@@ -10,18 +10,15 @@ In this repository I will with time open source the [MagicMirror](https://github
 - Multiple calenders based on faceregognition
 
 ## Usage
-1. Copy the folder `extensions` from `www/js` into your webservers `js` folder.
-2. Copy the folder `img` from `www` into your webservers root folder.
-3. In your index.php add <br>`<script src="http://localhost:1234/socket.io/socket.io.js"></script>
-<script src="js/extensions/paviro/paviro.js" type="text/javascript"></script>`<br> before `</body>` and remove the existing refrence to socket.io.js
-4. Copy the folder SocketIOServer in `bin` into `/usr/local/bin` on your Pi or another mirror computer.
-5. Change the IP adress in `SocketIOServer/server.js` to the IP of your FRITZ!Box.
-6. Add your adressbook in `SocketIOServer/addressbook.js`.
-7. Install node.js [(instructions)](http://blog.wia.io/installing-node-js-v4-0-0-on-a-raspberry-pi/)
-8. Open a terminal and change into `SocketIOServer` by using `cd /usr/local/bin/SocketIOServer` then install the dependencies (see bellow).
-9. Activate the callmonitor of your FRITZ!Box by calling `#96*5*` on a connected phone.
-10. Run the script by executing `node server.js` in the SocketIOServer folder.
-11. Add the server.js to your autostart.
+1. Copy the folder `www/modules/paviro` into `modules` inside your mirrors webserver.
+2. Copy the folder SocketIOServer in `bin` into `/usr/local/bin` on your Pi or another mirror computer.
+3. Change the IP adress in `SocketIOServer/server.js` to the IP of your FRITZ!Box.
+4. Add your adressbook in `SocketIOServer/addressbook.js`.
+5. Install node.js [(instructions)](http://blog.wia.io/installing-node-js-v4-0-0-on-a-raspberry-pi/)
+6. Open a terminal and change into `SocketIOServer` by using `cd /usr/local/bin/SocketIOServer` then install the dependencies (see bellow).
+7. Activate the callmonitor of your FRITZ!Box by calling `#96*5*` on a connected phone.
+8. Run the script by executing `node server.js` in the SocketIOServer folder.
+9. Add the server.js to your autostart.
 
 ## Dependencies
 - [node-fritzbox-callmonitor](https://www.npmjs.com/package/node-fritzbox-callmonitor) (npm install node-fritzbox-callmonitor)

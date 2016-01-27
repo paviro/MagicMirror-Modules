@@ -1,23 +1,6 @@
 //connect do Call monitor
 //localStorage.debug = '*';
 
-//Add callmonitor CSS 
-$('body').append('<link rel="stylesheet" href="js/extensions/paviro/css/style.css">')
-
-//Add call alert
-$('body').append(`
-
-<div class="center-ver center-hor">
-
-<div id="call" class="light"><img src="img/phone.png" height="80px"><h2>Incoming call</h2><div id="caller"></div></div>
-
-<div id="anmeldung" class="light"><h2>Welcome</h2><div id="anmelde_name"></div></div>
-
-</div>
-
-`);
-
-
 function switchview(person) {
     if (person !="Abgemeldet" && person !="Unbekannt"){
         //Set calender URL for logged in user currently only one URL is supported.
