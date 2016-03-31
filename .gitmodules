@@ -1,0 +1,9 @@
+[submodule "MMM-Facial-Recognition"]
+	path = MMM-Facial-Recognition
+	url = https://github.com/paviro/MMM-Facial-Recognition
+[submodule "MMM-FRITZ-Box-Callmonitor"]
+	path = MMM-FRITZ-Box-Callmonitor
+	url = https://github.com/paviro/MMM-FRITZ-Box-Callmonitor
+[submodule "MMM-Voice-Control"]
+	path = MMM-Voice-Control
+	url = https://github.com/paviro/MMM-Voice-Control
