@@ -7,3 +7,6 @@
 [submodule "MMM-Voice-Control"]
 	path = MMM-Voice-Control
 	url = https://github.com/paviro/MMM-Voice-Control
+[submodule "MMM-Wunderlist"]
+	path = MMM-Wunderlist
+	url = https://github.com/paviro/MMM-Wunderlist
